@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JSSS FOUNDATION Academy</title>
+    <script>
+      (function() {
+        var l = window.location;
+        var isGithub = l.hostname.endsWith('github.io');
+        var pathSegments = l.pathname.split('/').filter(Boolean);
+        var base = (isGithub && pathSegments.length > 0) ? '/' + pathSegments[0] + '/' : '/';
+        window.location.replace(base + (l.search || '') + (l.hash || ''));
+      })();
+    </script>
+  </head>
+  <body>
+    <p style="font-family: sans-serif; text-align: center; margin-top: 50px; color: #475569;">
+      Redirecting to JSSS Foundation Academy...
+    </p>
+  </body>
+</html>

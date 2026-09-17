@@ -1,0 +1,8 @@
+{
+  "name": "Remix JSSS FOUNDATION Academy",
+  "description": "JEEB SEVA SHIB SEVA FOUNDATION - Student, Partner & Admin Operations with Center & Student Course Fee Upgrade Workflows, Automated Certification, and Official Academic Registers",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

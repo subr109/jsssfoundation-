@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSSS FOUNDATION Academy | JEEB SEVA SHIB SEVA FOUNDATION</title>
+    <meta name="description" content="JEEB SEVA SHIB SEVA FOUNDATION - Student, Partner & Admin Operations with Center & Student Course Fee Upgrade Workflows, Automated Certification, and Official Academic Registers" />
+    <meta property="og:title" content="JSSS FOUNDATION Academy | JEEB SEVA SHIB SEVA FOUNDATION" />
+    <meta property="og:description" content="JEEB SEVA SHIB SEVA FOUNDATION - Student, Partner & Admin Operations with Center & Student Course Fee Upgrade Workflows, Automated Certification, and Official Academic Registers" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      // Ensure directory URLs have a trailing slash so relative paths (./assets/...) resolve properly on GitHub Pages
+      (function() {
+        var path = window.location.pathname;
+        if (path && !path.endsWith('/') && !path.split('/').pop().includes('.')) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+    <div id="root">
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: #1e293b; padding: 24px; text-align: center;">
+        <div style="width: 48px; height: 48px; border: 4px solid #e2e8f0; border-top-color: #059669; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;"></div>
+        <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">JSSS FOUNDATION ACADEMY</h2>
+        <p style="font-size: 14px; color: #64748b; margin: 0; max-width: 420px;">Loading portal environment and academic registries...</p>
+        <noscript>
+          <div style="margin-top: 20px; padding: 16px; background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; color: #991b1b; max-width: 480px;">
+            <strong>JavaScript Required:</strong> Please enable JavaScript in your browser settings to access the JSSS Foundation portal.
+          </div>
+        </noscript>
+        <div id="gh-pages-diagnostic" style="display: none; margin-top: 24px; padding: 16px 20px; background-color: #fff; border: 1px solid #e2e8f0; border-radius: 12px; max-width: 520px; text-align: left; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+          <strong style="color: #b45309; display: block; margin-bottom: 6px; font-size: 14px;">⚠️ GitHub Pages Setup Notice</strong>
+          <p style="font-size: 13px; color: #475569; line-height: 1.5; margin: 0 0 10px 0;">
+            If this portal is showing a white screen or not finishing loading on GitHub Pages:
+          </p>
+          <ol style="font-size: 12px; color: #334155; margin: 0; padding-left: 18px; line-height: 1.6;">
+            <li>Go to your GitHub repo <strong>Settings → Pages</strong>.</li>
+            <li>Under <strong>Build and deployment → Source</strong>, select <strong>GitHub Actions</strong> (a workflow has already been configured in <code>.github/workflows/deploy.yml</code>).</li>
+            <li>Alternatively, run <code>npm run deploy</code> in your terminal to build and push to the <code>gh-pages</code> branch.</li>
+          </ol>
+        </div>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+      <script>
+        // Show diagnostic guidance only if the app hasn't mounted after 3.5 seconds
+        setTimeout(function() {
+          var diag = document.getElementById('gh-pages-diagnostic');
+          if (diag && document.getElementById('root') && document.getElementById('root').querySelector('#gh-pages-diagnostic')) {
+            diag.style.display = 'block';
+          }
+        }, 3500);
+      </script>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
