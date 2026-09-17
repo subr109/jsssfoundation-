@@ -3,6 +3,7 @@ import { useApp } from '../../context/AppContext';
 import { Logo } from '../common/Logo';
 import { OfficialUpiQrCard } from '../common/OfficialUpiQrCard';
 import { OfficialPaymentQrModal } from '../common/OfficialPaymentQrModal';
+import netajiPortrait from '../../assets/images/netaji_subhash_bose_1789616823600.jpg';
 import {
   GraduationCap,
   Briefcase,
@@ -26,6 +27,9 @@ import {
   Landmark,
   QrCode,
   CreditCard,
+  Flame,
+  Flag,
+  Heart,
 } from 'lucide-react';
 
 export const LandingPage: React.FC = () => {
@@ -33,6 +37,45 @@ export const LandingPage: React.FC = () => {
   const [quickCertQuery, setQuickCertQuery] = useState('');
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isFeeQrOpen, setIsFeeQrOpen] = useState(false);
+  const [activeNetajiQuote, setActiveNetajiQuote] = useState(0);
+
+  const netajiQuotes = [
+    {
+      quote: "Give me blood, and I will give you freedom!",
+      subQuote: "তোমরা আমাকে রক্ত দাও, আমি তোমাদের স্বাধীনতা দেব! • तुम मुझे खून दो, मैं तुम्हें आज़ादी दूंगा!",
+      context: "Historic Proclamation to the Indian National Army (Azad Hind Fauj), 1944",
+      tag: "Supreme Dedication",
+      accent: "from-amber-500 to-rose-500",
+    },
+    {
+      quote: "One individual may die for an idea, but that idea will, after his death, incarnate itself in a thousand lives.",
+      subQuote: "একটি আদর্শের জন্য একজন মানুষের মৃত্যু হতে পারে, কিন্তু সেই আদর্শ তার মৃত্যুর পর হাজারটি জীবনে রূপ পরিগ্রহ করবে।",
+      context: "Address on Immortal Ideals, Youth Awakening & Nation-Building",
+      tag: "Immortal Vision",
+      accent: "from-emerald-500 to-teal-600",
+    },
+    {
+      quote: "Freedom is not given, it is taken.",
+      subQuote: "স্বাধীনতা কেউ সহজে দেয় না, তা আত্মবিশ্বাস ও সৎ সাহসে অর্জন করতে হয়।",
+      context: "Call to Action for Fearless Character & Self-Determination",
+      tag: "Courage & Resolution",
+      accent: "from-blue-600 to-indigo-600",
+    },
+    {
+      quote: "Never lose your faith in the destiny of India. There is no power on earth that can keep India in bondage.",
+      subQuote: "ভারতের উজ্জ্বল ভবিষ্যতের উপর কখনো বিশ্বাস হারাবেন না। ভারতবর্ষ স্বমহিমায় বিশ্বে মাথা তুলে দাঁড়াবেই।",
+      context: "Message to the Youth of India and the Soldiers of Freedom",
+      tag: "Faith in Mother India",
+      accent: "from-orange-500 to-amber-600",
+    },
+    {
+      quote: "Life loses half its interest if there is no struggle — if there are no risks to be taken.",
+      subQuote: "জীবন তার অর্ধেক সৌন্দর্য হারিয়ে ফেলে যদি সেখানে কোনো সংগ্রাম না থাকে — যদি আত্মত্যাগের সাহস না থাকে।",
+      context: "Inspiring Students to Embrace Learning, Self-Reliance & Hard Work",
+      tag: "Youth Empowerment",
+      accent: "from-purple-600 to-pink-600",
+    },
+  ];
 
   const testimonials = [
     {
@@ -231,6 +274,154 @@ export const LandingPage: React.FC = () => {
           <div className="space-y-1">
             <span className="text-3xl sm:text-4xl font-black text-amber-600">100%</span>
             <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">QR Code Verified</p>
+          </div>
+        </div>
+      </section>
+
+      {/* NETAJI SUBHASH CHANDRA BOSE TRIBUTE & INSPIRATION SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white rounded-3xl border border-amber-500/30 shadow-2xl">
+          {/* Subtle Tricolor Top Accent Line */}
+          <div className="h-1.5 w-full grid grid-cols-3">
+            <div className="bg-[#FF9933]"></div>
+            <div className="bg-white"></div>
+            <div className="bg-[#138808]"></div>
+          </div>
+
+          <div className="p-6 sm:p-10 lg:p-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Left Column: Netaji Portrait & Commemorative Medal */}
+              <div className="lg:col-span-5 flex flex-col items-center text-center space-y-4">
+                <div className="relative group">
+                  {/* Decorative Glow & Border */}
+                  <div className="absolute -inset-1.5 bg-gradient-to-tr from-amber-500 via-yellow-400 to-emerald-500 rounded-3xl blur-md opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                  
+                  <div className="relative p-2 bg-slate-900 rounded-3xl border-2 border-amber-400/60 shadow-2xl">
+                    <img
+                      src={netajiPortrait}
+                      alt="Netaji Subhash Chandra Bose"
+                      referrerPolicy="no-referrer"
+                      className="w-64 h-64 sm:w-72 sm:h-72 object-cover object-top rounded-2xl shadow-inner transform group-hover:scale-[1.02] transition-transform duration-300"
+                      onError={(e) => {
+                        // Fallback if local asset is loading
+                        (e.target as HTMLImageElement).src = '/images/netaji.jpg';
+                      }}
+                    />
+                    
+                    {/* Badge at Bottom of Portrait */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-slate-950/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-amber-400/60 shadow-lg flex items-center gap-2 whitespace-nowrap">
+                      <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                      <span className="text-xs font-black tracking-wider text-amber-300 uppercase">
+                        Jai Hind • জয় হিন্দ
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Identity & Honors */}
+                <div className="space-y-1 pt-1">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-0.5 bg-amber-500/10 border border-amber-500/30 rounded-full text-[11px] font-bold text-amber-300">
+                    <Flag className="w-3 h-3 text-amber-400" />
+                    <span>Deshnayak (Hero of the Nation)</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                    Netaji Subhash Chandra Bose
+                  </h3>
+                  <p className="text-xs font-semibold text-slate-300">
+                    Leader of the Azad Hind Fauj (INA) • 1897 – 1945
+                  </p>
+                  <p className="text-[11px] text-emerald-300/80 max-w-sm pt-1">
+                    Guiding beacon for Jeeb Seva Shib Seva Foundation's dedication to youth empowerment, self-reliance, and national service.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Inspiring Quotes Showcase */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="space-y-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-xs font-bold text-emerald-300">
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Inspirational Beacon for Youth & Nation</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
+                    Immortal Words of Netaji Subhash Chandra Bose
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-300">
+                    Drawing inspiration from Netaji's fearless patriotism, relentless discipline, and vision of an educated, self-sufficient India.
+                  </p>
+                </div>
+
+                {/* Active Quote Card */}
+                <div className="relative bg-slate-900/90 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-slate-700/80 shadow-xl space-y-4">
+                  <Quote className="w-10 h-10 text-amber-400/30 absolute top-4 right-4 pointer-events-none" />
+
+                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                    {netajiQuotes[activeNetajiQuote].tag}
+                  </div>
+
+                  <blockquote className="text-lg sm:text-xl md:text-2xl font-black text-amber-100 leading-relaxed italic">
+                    "{netajiQuotes[activeNetajiQuote].quote}"
+                  </blockquote>
+
+                  {netajiQuotes[activeNetajiQuote].subQuote && (
+                    <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed border-l-2 border-emerald-500 pl-3">
+                      {netajiQuotes[activeNetajiQuote].subQuote}
+                    </p>
+                  )}
+
+                  <div className="pt-2 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-400">
+                    <span className="font-semibold text-slate-300">
+                      📍 {netajiQuotes[activeNetajiQuote].context}
+                    </span>
+                    <span className="text-[11px] font-mono text-emerald-400">
+                      Quote {activeNetajiQuote + 1} of {netajiQuotes.length}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Quote Selector Buttons */}
+                <div className="space-y-2">
+                  <span className="text-[11px] uppercase tracking-wider font-bold text-slate-400 block">
+                    Select a Quote to Read & Reflect:
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                    {netajiQuotes.map((q, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setActiveNetajiQuote(idx)}
+                        className={`p-2 rounded-xl text-left text-xs font-bold transition-all border cursor-pointer flex flex-col justify-between ${
+                          activeNetajiQuote === idx
+                            ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-md scale-102'
+                            : 'bg-slate-900/70 hover:bg-slate-800 text-slate-300 border-slate-700/60'
+                        }`}
+                      >
+                        <span className="text-[10px] opacity-75 font-mono">#{idx + 1}</span>
+                        <span className="line-clamp-1 text-[11px] font-bold">{q.tag}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Foundation Core Philosophy Connection */}
+                <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/20 flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400 mt-0.5">
+                    <Heart className="w-4 h-4" />
+                  </div>
+                  <div className="text-xs text-slate-300 space-y-0.5">
+                    <strong className="text-white font-bold block">
+                      Our Motto: "Jeeb Seva is Shib Seva" (Service to Mankind is Service to God)
+                    </strong>
+                    <p className="leading-relaxed text-slate-300">
+                      Guided by India's legendary heroes, JSSS Foundation bridges vocational education, practical digital skills, and ethical social responsibility for every student across the nation.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
